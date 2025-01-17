@@ -28,16 +28,15 @@ const Screen = () => {
   return (
     <View>
       <StatusBar style="dark" />
-      <Text style={styles.title}>WELCOME TO PRO FITNESS!</Text>
       <Image
         source={require("@/assets/images/IMG Layout-2.png")}
-        style={{ width: "100%", height: 550, marginTop: -30 }}
+        style={{ width: "100%", height: 480, marginTop: -30 }}
       />
 
       <View>
         <TextInput
           style={styles.input}
-          placeholder="Email Address"
+          placeholder="Email Address" 
           keyboardType="email-address"
           value={email}
           onChangeText={setEmail} // Update email state
@@ -119,7 +118,7 @@ const styles = StyleSheet.create({
   },
   signup: {
     textAlign: "center",
-    top: 90,
+    top: 100,
     fontSize: 22,
     fontFamily: "Bebas Neue",
     color: "#B0C929",
@@ -127,17 +126,17 @@ const styles = StyleSheet.create({
   google: {
     height: 70,
     width: 57,
-    top: 110,
+    top: 140,
     alignSelf: "center",
-    marginHorizontal: 10,
+    marginHorizontal: 15,
     resizeMode: "cover",
   },
   apple: {
     height: 60,
     width: 60,
-    top: 110,
+    top: 140,
     alignSelf: "center",
-    marginHorizontal: 10,
+    marginHorizontal: 15,
     resizeMode: "cover",
   },
 });

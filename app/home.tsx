@@ -1,23 +1,30 @@
-import { StyleSheet, Text, TouchableOpacity, View, Image } from "react-native";
+import { StyleSheet, Text, TouchableOpacity, View, Image, TextInput } from "react-native";
 import React from "react";
 import { StatusBar } from 'expo-status-bar'; 
 import { useRouter } from "expo-router";
 import Animated, { FadeInRight } from "react-native-reanimated";
+import Searchbar from "@/components/search"
+import { SearchBar } from "react-native-screens";
 
 const Screen = () => {
   const router = useRouter();
 
   return (
 <View>
+<StatusBar style="light" />
     <View style={{width: '100%', height:339, position: 'relative'}}>
-        <View style={{width: '100%', height: 247,   position: 'absolute', backgroundColor: '#B0C929', borderRadius: 10,             }}></View>
-        <View style={{width: 214.84, height: 214.84, left: 49.02, top: 12.51, position: 'absolute', backgroundColor: 'rgba(255, 255, 255, 0.10)'}}>
-        <View style={{width: 70.67, height: 44, position: 'relative'}}>
-        <View style={{width: 20.86, height: 16.69, left: 0, top: 13.42, position: 'absolute', backgroundColor: 'white'}}></View>
-        <Image source={require("@/assets/images/profile.jpg")} style={{width: 44, height: 44, left: 26.67, top: 0, position: 'absolute', borderRadius: 9999, }}/>
+        <View style={{width: '100%', height: 257,   position: 'absolute', backgroundColor: '#B0C929', borderRadius: 30,}}></View>
+        <View>
+        <View style={styles.top}>
+        <Image source={require("@/assets/images/profile.jpg")} style={{width: 80, height: 80, left: 20,  top: 40, position: 'absolute', borderRadius: 9999, }}/>
+        <Image source={require("@/assets/images/noti.png")} style={{width: 35, height: 35, left:430,   top: 60, position: 'absolute', }}/>
+        
+    </View>
+    <View>
+      <Searchbar/>
     </View>
         </View>
-        <View style={{width: 214.84, height: 214.84, left: 0, top: 0, position: 'absolute', backgroundColor: 'rgba(255, 255, 255, 0.10)'}}></View>
+        
     </View>
 
 </View>
@@ -25,3 +32,15 @@ const Screen = () => {
 };
 
 export default Screen;
+
+const styles = StyleSheet.create({
+top:{
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    padding: 20,
+    position: 'absolute',
+    
+}
+
+});
